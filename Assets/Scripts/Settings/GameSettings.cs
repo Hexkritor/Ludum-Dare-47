@@ -9,13 +9,16 @@ public class GameSettings : MonoBehaviour
     //varrialbes
     private SettingsPopup _settingsPopup;
 
-
     void Update()
     {
-        if (Input.GetAxis("Cancel") == 1 && !_settingsPopup)
-        { 
-            _settingsPopup = Instantiate(settingsPopup); 
+        if (Input.GetButtonDown("Pause") && !_settingsPopup)
+        {
+            _settingsPopup = Instantiate(settingsPopup);
             _settingsPopup.ShowToMenuButton();
+        }
+        else if (Input.GetButtonDown("Pause") && _settingsPopup)
+        {
+            Destroy(_settingsPopup.gameObject);
         }
     }
 }
