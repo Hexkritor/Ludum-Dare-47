@@ -17,6 +17,7 @@ public class Player : VisibleObject
     [SerializeField]
     private int _attackDamage;
     // Start is called before the first frame update
+    public int hp { get { return _hp; } }
 
     public void Hit(int damage)
     {
@@ -50,6 +51,8 @@ public class Player : VisibleObject
                 _enemy.Hit(_attackDamage);
                 Effect _effect = Instantiate(attackEffect, gameObject.transform.position + (Vector3)direction, Quaternion.Euler(Vector3.zero));
                 _effect.SetDirection(direction);
+                animator.SetBool("isAttacking", true);
+                Invoke("ResetAnimation", 0.2f);
             }
         }
         else if (gameManager.CanMove((Vector2)gameObject.transform.position + direction))
@@ -57,9 +60,9 @@ public class Player : VisibleObject
             gameManager.RemoveVisibleObject(gameObject.transform.position);
             gameManager.SetVisibleObject((Vector2)gameObject.transform.position + direction, this);
             _rigidBody.velocity = direction * _movementSpeed;
+            animator.SetBool("isDashing", true);
         }
         Invoke("Stop", 1 / _movementSpeed);
-        animator.SetBool("isDashing", true);
         particleSystem.Play();
     }
 
@@ -79,6 +82,10 @@ public class Player : VisibleObject
     {
         base.UpdateLayerPosition();
         shadowRenderer.sortingOrder = Mathf.FloorToInt(9000 - gameObject.transform.position.y * 10) - 1;
+    }
+    private void ResetAnimation()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
 }
