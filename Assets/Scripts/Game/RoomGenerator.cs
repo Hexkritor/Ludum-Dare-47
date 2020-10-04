@@ -12,6 +12,7 @@ public class RoomGenerator : MonoBehaviour
     public Player player;
     public List<Enemy> enemies;
     public TextMeshPro debugText;
+    public RhythmUI rhythmUI;
 
     private RoomTile.Type[,] roomTypes;
 
@@ -56,7 +57,7 @@ public class RoomGenerator : MonoBehaviour
         return _player;
     }
 
-    public Enemy CreateEnemy(int size)
+    public Enemy CreateEnemy(int size, int id)
     {
         int x = 0, y = 0;
         while (true)
@@ -67,7 +68,8 @@ public class RoomGenerator : MonoBehaviour
             y = Random.Range(1, size);
         }
         roomTypes[x, y] = RoomTile.Type.BUSY;
-        Enemy _enemy = Instantiate(enemies[Random.Range(0,enemies.Count)], new Vector2(x, y), Quaternion.Euler(Vector3.zero));
+
+        Enemy _enemy = Instantiate(enemies[id], new Vector2(x, y), Quaternion.Euler(Vector3.zero));
         _enemy.gameManager = gameManager;
         gameManager.SetVisibleObject(_enemy.gameObject.transform.position, _enemy);
         return _enemy;

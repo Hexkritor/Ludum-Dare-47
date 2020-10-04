@@ -224,11 +224,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   shadowRenderer: {fileID: 2380319296216932220}
-  _stepsToMove: 4
+  _stepsToMove: 3
   _movementSpeed: 7.5
   _moveToPlayerRate: 0.5
-  _hp: 2
-  _attackDamage: 5
+  _hp: 3
+  _attackDamage: 1
 --- !u!95 &6707355283104486819
 Animator:
   serializedVersion: 3

@@ -4849,8 +4849,8 @@ MonoBehaviour:
   animator: {fileID: 6835083502486696525}
   particleSystem: {fileID: 3527793058826182032}
   _movementSpeed: 7.5
-  _hp: 999
-  _attackDamage: 5
+  _hp: 5
+  _attackDamage: 1
 --- !u!95 &6835083502486696525
 Animator:
   serializedVersion: 3

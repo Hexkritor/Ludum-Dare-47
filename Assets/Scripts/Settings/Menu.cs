@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("Level", 0);
         if (!PlayerPrefs.HasKey("MasterVolume"))
         {
             PlayerPrefs.SetFloat("MasterVolume", 1);

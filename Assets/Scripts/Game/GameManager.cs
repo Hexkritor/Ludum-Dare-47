@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviour
     //linkage
     public RoomGenerator generator;
     public Camera camera;
+
+
+    public List<int> goblinLevelParams;
+    public List<int> mushroomLevelParams;
+    public List<int> skeletonLevelParams;
 
     private RoomTile[,] _roomTiles;
     private Player _activePlayer;
@@ -35,10 +41,12 @@ public class GameManager : MonoBehaviour
         _roomTiles = generator.GenerateRoom(roomSize);
         _activePlayer = generator.CreatePlayer(roomSize);
         _enemies = new List<Enemy>();
-        for (int i = 0; i < numberOfEnemies; ++i)
-        { 
-            _enemies.Add(generator.CreateEnemy(roomSize));
-        }
+        for (int i = 0; i < goblinLevelParams[PlayerPrefs.GetInt("Level")]; ++i)
+            _enemies.Add(generator.CreateEnemy(roomSize, 1));
+        for (int i = 0; i < skeletonLevelParams[PlayerPrefs.GetInt("Level")]; ++i)
+            _enemies.Add(generator.CreateEnemy(roomSize, 0));
+        for (int i = 0; i < mushroomLevelParams[PlayerPrefs.GetInt("Level")]; ++i)
+            _enemies.Add(generator.CreateEnemy(roomSize, 2));
         _stepCooldownTimer = 0;
         _standingObjectsUpdated = true;
         _discoTick = 1;
@@ -131,5 +139,10 @@ public class GameManager : MonoBehaviour
     private void LateUpdate()
     {
         camera.transform.position = new Vector3 (_activePlayer.transform.position.x, _activePlayer.transform.position.y, camera.transform.position.z);
+        if (_enemies.Count == 0)
+        {
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level"));
+            SceneManager.LoadScene("Game");
+        }
     }
 }
