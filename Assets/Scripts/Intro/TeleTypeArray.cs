@@ -27,6 +27,7 @@ public class TeleTypeArray : MonoBehaviour
 
     public void LoadScene()
     {
+        PlayerPrefs.SetInt("Level", 0);
         SceneManager.LoadScene("Game");
     }
 

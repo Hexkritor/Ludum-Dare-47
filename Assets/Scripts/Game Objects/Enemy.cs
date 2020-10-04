@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : VisibleObject
 {
     public SpriteRenderer shadowRenderer;
+    public Effect attackEffect;
+    public Animator animator;
 
     [SerializeField]
     protected int _stepsToMove;
@@ -65,6 +67,9 @@ public class Enemy : VisibleObject
                     {
                         Player _enemy = gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction) as Player;
                         _enemy.Hit(_attackDamage);
+                        Effect _effect = Instantiate(attackEffect, gameObject.transform.position + Vector3.up * 0.5f + (Vector3)direction, Quaternion.Euler(Vector3.zero));
+                        animator.SetBool("isAttacking", true);
+                        Invoke("ResetAnimation", 0.2f);
                     }
                 }
                 else if (gameManager.CanMove((Vector2)gameObject.transform.position + direction))
@@ -93,6 +98,11 @@ public class Enemy : VisibleObject
             }
             Invoke("Stop", 1 / _movementSpeed);
         }
+    }
+
+    private void ResetAnimation()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
     public void Stop()

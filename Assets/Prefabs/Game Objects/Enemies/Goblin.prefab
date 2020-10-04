@@ -145,6 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   shadowRenderer: {fileID: 877031985044444106}
+  attackEffect: {fileID: 114855199084294786, guid: e72e0c2ac42bbbf4ebc792cdc2b21d5f,
+    type: 3}
+  animator: {fileID: 7413884405223030873}
   _stepsToMove: 1
   _movementSpeed: 7.5
   _moveToPlayerRate: 1

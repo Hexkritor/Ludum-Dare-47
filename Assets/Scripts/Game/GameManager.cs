@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public int numberOfEnemies;
     //linkage
     public RoomGenerator generator;
+    public HP_Bar bar;
     public Camera camera;
+    public GameObject deathScreen;
 
 
     public List<int> goblinLevelParams;
@@ -89,7 +91,8 @@ public class GameManager : MonoBehaviour
         for (int j = 0; j < _roomTiles.GetLength(1); ++j)
             for (int i = 0; i < _roomTiles.GetLength(0); ++i)
                 _roomTiles[i, j].standingObject = null;
-        SetVisibleObject(_activePlayer.transform.position, _activePlayer);
+        if (_activePlayer)
+            SetVisibleObject(_activePlayer.transform.position, _activePlayer);
         foreach (Enemy _enemy in _enemies)
             SetVisibleObject(_enemy.transform.position, _enemy);
         _standingObjectsUpdated = true;
@@ -138,11 +141,18 @@ public class GameManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        camera.transform.position = new Vector3 (_activePlayer.transform.position.x, _activePlayer.transform.position.y, camera.transform.position.z);
-        if (_enemies.Count == 0)
+
+        if (_activePlayer)
         {
-            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-            SceneManager.LoadScene("Game");
+            bar.SetHP(_activePlayer.hp);
+            camera.transform.position = new Vector3(_activePlayer.transform.position.x, _activePlayer.transform.position.y, camera.transform.position.z);
+            if (_enemies.Count == 0)
+            {
+                PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+                SceneManager.LoadScene("Game");
+            }
         }
+        else
+            deathScreen.SetActive(true);
     }
 }
