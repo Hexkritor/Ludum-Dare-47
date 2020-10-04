@@ -17,9 +17,17 @@ public class GameManager : MonoBehaviour
     private Player _activePlayer;
     private List<Enemy> _enemies;
     [SerializeField]
+    private float _targetBPM;
+    [SerializeField]
+    private float _stepHitRate;
     private float _stepCooldown;
     private float _stepCooldownTimer;
+    private float _hitCooldown;
+    private float _hitCooldownTimer;
     private bool _standingObjectsUpdated;
+    private bool _isDiscoMode = true;
+    private bool _isButtonPressed;
+    private int _discoTick;
 
     // Start is called before the first frame update
     void Start()
@@ -33,20 +41,24 @@ public class GameManager : MonoBehaviour
         }
         _stepCooldownTimer = 0;
         _standingObjectsUpdated = true;
+        _discoTick = 1;
+        _stepCooldown = (60 / _targetBPM) * (1 - _stepHitRate);
+        _hitCooldown = 60 / _targetBPM * _stepHitRate;
     }
 
 
     public bool CanMove(Vector2 position)
     {
         Vector2Int intPosition = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
-        try
+        if (intPosition.x >= 1 && intPosition.x < _roomTiles.GetLength(0) - 1 && intPosition.y >= 1 && intPosition.y < _roomTiles.GetLength(1) - 1)
         {
-            return _roomTiles[intPosition.x, intPosition.y].type != RoomTile.Type.WALL && !_roomTiles[intPosition.x, intPosition.y].standingObject;
+            if (_roomTiles[intPosition.x, intPosition.y].type == RoomTile.Type.WALL || _roomTiles[intPosition.x, intPosition.y].standingObject != null)
+                return false;
+            else
+                return true;
         }
-        catch 
-        {
+        else
             return false;
-        }
     }
 
     public VisibleObject GetVisibleObject(Vector2 position)
@@ -80,20 +92,39 @@ public class GameManager : MonoBehaviour
         _enemies.Remove(enemy);
     }
 
+    private void SetDiscoMode()
+    {
+        for (int i = 0; i < _roomTiles.GetLength(0); ++i)
+            for (int j = 0; j < _roomTiles.GetLength(1); ++j)
+                _roomTiles[i, j].SetDiscoMode(((i + j + _discoTick) % 2 == 0) ? 0 : _discoTick);
+        switch (_discoTick)
+        {
+            case 1:
+                _discoTick = 2;
+                break;
+            case 2: 
+                _discoTick = 1;
+                break;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         _stepCooldownTimer = (_stepCooldownTimer - Time.fixedDeltaTime <= 0) ? 0 : _stepCooldownTimer - Time.fixedDeltaTime;
         if (_stepCooldownTimer == 0 && !_standingObjectsUpdated)
             UpdateVisibleObjects();
+        if (_hitCooldownTimer == 0)
         if (_stepCooldownTimer == 0 && (Input.GetAxis("MoveVertical") != 0 || Input.GetAxis("MoveHorizontal") != 0))
         {
-            foreach (Enemy _enemy in _enemies)
-                _enemy.Move(_activePlayer.gameObject.transform.position);
             if (_activePlayer)
                 _activePlayer.Move(new Vector2(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical")));
+            foreach (Enemy _enemy in _enemies)
+                _enemy.Move(_activePlayer.gameObject.transform.position);
             _stepCooldownTimer = _stepCooldown;
             _standingObjectsUpdated = false;
+            if (_isDiscoMode)
+            SetDiscoMode();
         }
     }
 

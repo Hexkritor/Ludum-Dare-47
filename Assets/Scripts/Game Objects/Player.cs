@@ -7,6 +7,8 @@ public class Player : VisibleObject
 
     public SpriteRenderer shadowRenderer;
     public Effect attackEffect;
+    public Animator animator;
+    public ParticleSystem particleSystem;
 
     [SerializeField]
     private float _movementSpeed;
@@ -35,6 +37,8 @@ public class Player : VisibleObject
         {
             direction = Vector2.right * Mathf.Sign(direction.x);
             _renderer.flipX = direction.x < 0;
+            ParticleSystemRenderer __renderer = particleSystem.gameObject.GetComponent<ParticleSystemRenderer>();
+            __renderer.flip = (direction.x < 0) ? Vector3.right : Vector3.zero;
         }
         else
             direction = Vector2.up * Mathf.Sign(direction.y);
@@ -55,6 +59,8 @@ public class Player : VisibleObject
             _rigidBody.velocity = direction * _movementSpeed;
         }
         Invoke("Stop", 1 / _movementSpeed);
+        animator.SetBool("isDashing", true);
+        particleSystem.Play();
     }
 
     public void Stop()
@@ -66,11 +72,13 @@ public class Player : VisibleObject
             Mathf.RoundToInt(gameObject.transform.position.x),
             Mathf.RoundToInt(gameObject.transform.position.y),
             Mathf.RoundToInt(gameObject.transform.position.z));
+        animator.SetBool("isDashing", false);
+        particleSystem.Stop();
     }
     protected override void UpdateLayerPosition()
     {
         base.UpdateLayerPosition();
-        shadowRenderer.sortingOrder = Mathf.FloorToInt(9000 - gameObject.transform.position.y * 10);
+        shadowRenderer.sortingOrder = Mathf.FloorToInt(9000 - gameObject.transform.position.y * 10) - 1;
     }
 
 }

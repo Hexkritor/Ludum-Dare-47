@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : VisibleObject
 {
+    public SpriteRenderer shadowRenderer;
+
     [SerializeField]
     protected int _stepsToMove;
     protected int _stepsToMoveLeft;
@@ -112,5 +114,11 @@ public class Enemy : VisibleObject
             _rigidBody = gameObject.GetComponent<Rigidbody2D>();
         if (!_isMoving && _rigidBody.velocity.magnitude > 0)
             Stop();
+    }
+
+    protected override void UpdateLayerPosition()
+    {
+        base.UpdateLayerPosition();
+        shadowRenderer.sortingOrder = Mathf.FloorToInt(9000 - gameObject.transform.position.y * 10) - 1;
     }
 }
