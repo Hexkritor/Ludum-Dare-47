@@ -7,6 +7,9 @@ public class Paly_core_music : MonoBehaviour
     [FMODUnity.EventRef]
     public string CoreMusic;
 
+    [FMODUnity.EventRef]
+    public string Menu_music;
+
     FMOD.Studio.EventInstance EventInstance;
 
    public void Music_start()
@@ -15,5 +18,5 @@ public class Paly_core_music : MonoBehaviour
         EventInstance.start();//Проигрывает этот контейнер
         EventInstance.release();//Удаляет этот контейнер
     }
-   
+    
 }

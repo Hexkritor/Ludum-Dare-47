@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 1422228102}
   - component: {fileID: 1422228103}
   - component: {fileID: 1422228104}
+  - component: {fileID: 1422228105}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1216,6 +1217,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoreMusic: event:/Music/Core music
+  Menu_music: 
+--- !u!114 &1422228105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422228099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Menu music
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1438685708
 PrefabInstance:
   m_ObjectHideFlags: 0
