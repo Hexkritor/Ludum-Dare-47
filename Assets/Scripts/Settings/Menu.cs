@@ -28,6 +28,11 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
+        Invoke("LoadScene", 2f);
+    }
+
+    public void LoadScene()
+    {
         SceneManager.LoadScene(gameScene);
     }
 

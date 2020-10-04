@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
         camera.transform.position = new Vector3 (_activePlayer.transform.position.x, _activePlayer.transform.position.y, camera.transform.position.z);
         if (_enemies.Count == 0)
         {
-            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level"));
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
             SceneManager.LoadScene("Game");
         }
     }
