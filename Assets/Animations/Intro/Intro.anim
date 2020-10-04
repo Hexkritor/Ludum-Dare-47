@@ -815,6 +815,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 34.533333
+    functionName: Music_start
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 34.85
     functionName: MagePlay
     data: Afro Idle
@@ -826,6 +833,13 @@ AnimationClip:
     functionName: SetSecondText
     data: "\u041D\u0430\u0441\u0442\u0430\u043B\u043E \u0432\u0440\u0435\u043C\u044F
       \u0422\u0410\u041D\u0426\u0415\u0412\u0410\u0422\u042C!"
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 39.2
+    functionName: 
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

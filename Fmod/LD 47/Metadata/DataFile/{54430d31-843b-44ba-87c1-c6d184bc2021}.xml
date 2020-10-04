@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="DataFile" id="{54430d31-843b-44ba-87c1-c6d184bc2021}">
+		<property name="assetPath">
+			<value>Sounds LD 47/gg/sword 1 [2020-10-04 204307].wav.asd</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>

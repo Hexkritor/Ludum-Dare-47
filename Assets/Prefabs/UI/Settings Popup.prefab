@@ -670,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6270114448462985820}
   - component: {fileID: 3468104247229719560}
+  - component: {fileID: 223782072041449405}
   m_Layer: 5
   m_Name: Sound Volume Slider
   m_TagString: Untagged
@@ -757,6 +758,30 @@ MonoBehaviour:
           m_StringArgument: SoundVolume
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 223782072041449405}
+        m_MethodName: VCAVolumeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &223782072041449405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929918085985507187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58984f665e07ac5418d2b40cea994d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcaName: Sounds
 --- !u!1 &3912539268204730554
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +898,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5213368265970895926}
         m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 738286051222804981}
+        m_MethodName: PlayUI1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1041,6 +1077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422907176003799540}
   - component: {fileID: 5539526888094531987}
+  - component: {fileID: 4618122198000924973}
   m_Layer: 5
   m_Name: Music Volume Slider
   m_TagString: Untagged
@@ -1128,6 +1165,30 @@ MonoBehaviour:
           m_StringArgument: MusicVolume
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4618122198000924973}
+        m_MethodName: VCAVolumeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4618122198000924973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931341187143148486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58984f665e07ac5418d2b40cea994d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcaName: Music
 --- !u!1 &6006143661462412384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666157055726816345}
   - component: {fileID: 4106489057593662101}
+  - component: {fileID: 3360163889657220075}
   m_Layer: 5
   m_Name: Master Volume Slider
   m_TagString: Untagged
@@ -1830,6 +1892,30 @@ MonoBehaviour:
           m_StringArgument: MasterVolume
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3360163889657220075}
+        m_MethodName: VCAVolumeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3360163889657220075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478797741002557439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58984f665e07ac5418d2b40cea994d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcaName: ALL
 --- !u!1 &7796828584553696585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2153,7 @@ RectTransform:
   - {fileID: 4422907176003799540}
   - {fileID: 5788085415368824576}
   - {fileID: 7779726128987424629}
+  - {fileID: 738286051222804980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2210,3 +2297,90 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!1001 &3173770360192251631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5525360259966607487}
+    m_Modifications:
+    - target: {fileID: 2753269557676142341, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_Name
+      value: Music Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91e50aafe68ce254195c2b5a40563311, type: 3}
+--- !u!4 &738286051222804980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2753269557676142363, guid: 91e50aafe68ce254195c2b5a40563311,
+    type: 3}
+  m_PrefabInstance: {fileID: 3173770360192251631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &738286051222804981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2753269557676142362, guid: 91e50aafe68ce254195c2b5a40563311,
+    type: 3}
+  m_PrefabInstance: {fileID: 3173770360192251631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec74055bcafd5e4d88f0dc7819b5d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

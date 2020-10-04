@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="DataFile" id="{d83bf5f1-36f9-4b68-8b91-d08de85e34d3}">
+		<property name="assetPath">
+			<value>Sounds LD 47/Npc/skelet dth 3 [2020-10-04 204751].wav.asd</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>

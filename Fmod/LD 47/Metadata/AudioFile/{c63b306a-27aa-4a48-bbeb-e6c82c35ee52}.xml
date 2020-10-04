@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{c63b306a-27aa-4a48-bbeb-e6c82c35ee52}">
+		<property name="assetPath">
+			<value>Sounds LD 47/Npc/goblin dth 1 [2020-10-04 204708].wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0810884353741497</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>

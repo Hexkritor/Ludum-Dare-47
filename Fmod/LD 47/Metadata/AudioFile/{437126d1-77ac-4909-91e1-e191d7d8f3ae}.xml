@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{437126d1-77ac-4909-91e1-e191d7d8f3ae}">
+		<property name="assetPath">
+			<value>Sounds LD 47/gg/rewind [2020-10-04 204509].wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.8154421768707483</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{ff879fe4-9c6d-42c6-996c-8665d423ce5a}">
+		<property name="assetPath">
+			<value>Tower Of Disco Parts/In + kick.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8156009070294785</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>

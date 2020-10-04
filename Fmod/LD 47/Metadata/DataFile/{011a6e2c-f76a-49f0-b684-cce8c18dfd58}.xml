@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="DataFile" id="{011a6e2c-f76a-49f0-b684-cce8c18dfd58}">
+		<property name="assetPath">
+			<value>Sounds LD 47/UI/UI go [2020-10-04 204552].wav.asd</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7ba5d16-44ba-434c-b593-45d4bc326adb}</destination>
+		</relationship>
+	</object>
+</objects>
