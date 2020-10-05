@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{25aaabb6-ee32-49b9-8d52-464c8b6ab772}">
+		<property name="name">
+			<value>Dungeon_fade</value>
+		</property>
+		<relationship name="folder">
+			<destination>{68a7a2a6-92d4-4395-b041-7f4c5f152085}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{097954bb-5178-46c5-b311-4b8f3fef0c86}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{097954bb-5178-46c5-b311-4b8f3fef0c86}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.36000001430511475</value>
+		</property>
+	</object>
+</objects>

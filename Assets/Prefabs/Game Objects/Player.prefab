@@ -4713,7 +4713,6 @@ GameObject:
   - component: {fileID: 7039881189065978981}
   - component: {fileID: 6835083502486696525}
   - component: {fileID: 114395025561169660}
-  - component: {fileID: 114344705334285458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4850,8 +4849,9 @@ MonoBehaviour:
     type: 3}
   animator: {fileID: 6835083502486696525}
   particleSystem: {fileID: 3527793058826182032}
+  sound: {fileID: 114395025561169660}
   _movementSpeed: 7.5
-  _hp: 100
+  _hp: 0
   _attackDamage: 1
 --- !u!95 &6835083502486696525
 Animator:
@@ -4885,29 +4885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swsordAtt: event:/gg att
---- !u!114 &114344705334285458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3934584088037615633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/gg dth
-  PlayEvent: 2
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  DthSound: event:/gg dth
 --- !u!1 &6584283256933697746
 GameObject:
   m_ObjectHideFlags: 0

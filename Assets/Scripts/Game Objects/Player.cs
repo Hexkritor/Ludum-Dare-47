@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player : VisibleObject
 {
 
@@ -9,6 +10,8 @@ public class Player : VisibleObject
     public Effect attackEffect;
     public Animator animator;
     public ParticleSystem particleSystem;
+
+    public play_sound sound;
 
     [SerializeField]
     private float _movementSpeed;
@@ -25,6 +28,7 @@ public class Player : VisibleObject
         if (_hp <= 0)
         {
             gameManager.RemoveVisibleObject(gameObject.transform.position);
+            sound.Play_Death_Sound();
             Destroy(gameObject);
         }
     }

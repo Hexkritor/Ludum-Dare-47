@@ -8,6 +8,8 @@ public class TeleTypeArray : MonoBehaviour
 {
     public TeleTypeText[] teleTypes;
 
+    public Paly_core_music sw;
+
     public void SetText(int index, string text)
     {
         if (index >= 0 && index < teleTypes.Length)
@@ -34,6 +36,13 @@ public class TeleTypeArray : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Pause"))
+        {
+            PlayerPrefs.SetInt("fadeMusic", 1);
+            sw.AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
+            sw.AmbInstance.release();
             LoadScene();
+           
+        }
+           
     }
 }
