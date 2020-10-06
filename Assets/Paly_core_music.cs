@@ -28,6 +28,7 @@ public class Paly_core_music : MonoBehaviour
         {
             PlayerPrefs.SetInt("fadeMusic", 0);
         }
+
     }
 
     public void Music_start()
@@ -41,5 +42,5 @@ public class Paly_core_music : MonoBehaviour
         AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
         AmbInstance.release();
     }
-    
+
 }

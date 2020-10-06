@@ -4849,9 +4849,11 @@ MonoBehaviour:
     type: 3}
   animator: {fileID: 6835083502486696525}
   particleSystem: {fileID: 3527793058826182032}
+  gameObject: {fileID: 1807842092105614149, guid: 33c3dfe664cf71e4fb0abc9e918d2a2f,
+    type: 3}
   sound: {fileID: 114395025561169660}
   _movementSpeed: 7.5
-  _hp: 0
+  _hp: 100
   _attackDamage: 1
 --- !u!95 &6835083502486696525
 Animator:

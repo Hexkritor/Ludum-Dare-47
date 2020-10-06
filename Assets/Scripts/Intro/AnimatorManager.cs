@@ -16,4 +16,8 @@ public class AnimatorManager : MonoBehaviour
     {
         animators[1].Play(animation);
     }
+    public void PlayerPlay(string animation)
+    {
+        animators[2].Play(animation);
+    }
 }
