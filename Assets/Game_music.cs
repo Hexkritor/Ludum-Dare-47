@@ -23,12 +23,13 @@ public class Game_music : MonoBehaviour
         {
             EventInstance = FMODUnity.RuntimeManager.CreateInstance(CoreMusic2);//создаёт контейнер для семпла
             EventInstance.start();//Проигрывает этот контейнер
+            //EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             EventInstance.release();//Удаляет этот контейнер
 
             sw.AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
             sw.AmbInstance.release();
         }
-        
+        EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);   
     }
     
 
