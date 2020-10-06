@@ -22,9 +22,15 @@ public class Player : VisibleObject
     // Start is called before the first frame update
     public int hp { get { return _hp; } }
 
+    private void Start()
+    {
+        _hp = PlayerPrefs.GetInt("Hp");
+    }
+
     public void Hit(int damage)
     {
         _hp -= damage;
+        print(_hp.ToString());
         if (_hp <= 0)
         {
             gameManager.RemoveVisibleObject(gameObject.transform.position);
@@ -37,37 +43,39 @@ public class Player : VisibleObject
     {
         if (!_rigidBody)
             _rigidBody = gameObject.GetComponent<Rigidbody2D>();
-
-        if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
+        if (direction.magnitude > 0)
         {
-            direction = Vector2.right * Mathf.Sign(direction.x);
-            _renderer.flipX = direction.x < 0;
-            ParticleSystemRenderer __renderer = particleSystem.gameObject.GetComponent<ParticleSystemRenderer>();
-            __renderer.flip = (direction.x < 0) ? Vector3.right : Vector3.zero;
-        }
-        else
-            direction = Vector2.up * Mathf.Sign(direction.y);
-        if (gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction) != null)
-        {
-            if (gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction).GetType() == typeof(Enemy))
+            if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
             {
-                Enemy _enemy = gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction) as Enemy;
-                _enemy.Hit(_attackDamage);
-                Effect _effect = Instantiate(attackEffect, gameObject.transform.position + (Vector3)direction, Quaternion.Euler(Vector3.zero));
-                _effect.SetDirection(direction);
-                animator.SetBool("isAttacking", true);
-                Invoke("ResetAnimation", 0.2f);
+                direction = Vector2.right * Mathf.Sign(direction.x);
+                _renderer.flipX = direction.x < 0;
+                ParticleSystemRenderer __renderer = particleSystem.gameObject.GetComponent<ParticleSystemRenderer>();
+                __renderer.flip = (direction.x < 0) ? Vector3.right : Vector3.zero;
             }
+            else
+                direction = Vector2.up * Mathf.Sign(direction.y);
+            if (gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction) != null)
+            {
+                if (gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction).GetType() == typeof(Enemy))
+                {
+                    Enemy _enemy = gameManager.GetVisibleObject((Vector2)gameObject.transform.position + direction) as Enemy;
+                    _enemy.Hit(_attackDamage);
+                    Effect _effect = Instantiate(attackEffect, gameObject.transform.position + (Vector3)direction, Quaternion.Euler(Vector3.zero));
+                    _effect.SetDirection(direction);
+                    animator.SetBool("isAttacking", true);
+                    Invoke("ResetAnimation", 0.2f);
+                }
+            }
+            else if (gameManager.CanMove((Vector2)gameObject.transform.position + direction))
+            {
+                gameManager.RemoveVisibleObject(gameObject.transform.position);
+                gameManager.SetVisibleObject((Vector2)gameObject.transform.position + direction, this);
+                _rigidBody.velocity = direction * _movementSpeed;
+                animator.SetBool("isDashing", true);
+            }
+            Invoke("Stop", 1 / _movementSpeed);
+            particleSystem.Play();
         }
-        else if (gameManager.CanMove((Vector2)gameObject.transform.position + direction))
-        {
-            gameManager.RemoveVisibleObject(gameObject.transform.position);
-            gameManager.SetVisibleObject((Vector2)gameObject.transform.position + direction, this);
-            _rigidBody.velocity = direction * _movementSpeed;
-            animator.SetBool("isDashing", true);
-        }
-        Invoke("Stop", 1 / _movementSpeed);
-        particleSystem.Play();
     }
 
     public void Stop()

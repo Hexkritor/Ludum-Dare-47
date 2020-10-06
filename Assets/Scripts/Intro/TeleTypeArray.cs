@@ -37,11 +37,11 @@ public class TeleTypeArray : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause"))
         {
-            PlayerPrefs.SetInt("fadeMusic", 1);
+            PlayerPrefs.SetInt("fadeMusic", 0);
             sw.AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
             sw.AmbInstance.release();
+            print("Skip");
             LoadScene();
-           
         }
            
     }
