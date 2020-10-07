@@ -183,7 +183,6 @@ GameObject:
   - component: {fileID: 4449355339678161482}
   - component: {fileID: 4449355339678161481}
   - component: {fileID: 4449355339678161480}
-  - component: {fileID: 4449355339678161479}
   - component: {fileID: 4449355339678161478}
   m_Layer: 0
   m_Name: GameObject
@@ -225,6 +224,7 @@ MonoBehaviour:
   teleTypes:
   - {fileID: 4449355341412653326}
   - {fileID: 4449355340585105527}
+  sw: {fileID: 0}
 --- !u!95 &4449355339678161481
 Animator:
   serializedVersion: 3
@@ -259,21 +259,7 @@ MonoBehaviour:
   animators:
   - {fileID: 4449355339365655151}
   - {fileID: 4325413918553174064}
---- !u!114 &4449355339678161479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4449355339678161484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f99b2b54c23ea4c9d61f3185fc5039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CoreMusic: event:/Music/Core music
-  Backambience: event:/Music/Dungeon scape
-  x: 1
+  - {fileID: 7161938507631128358}
 --- !u!114 &4449355339678161478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 281, y: 179}
+  m_AnchoredPosition: {x: 268, y: 250}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4449355340585105524
@@ -603,7 +589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 145}
+  m_AnchoredPosition: {x: -252, y: 218}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4449355341412653424
@@ -832,6 +818,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cdad96bb72c5524bb6878efc209cd29, type: 3}
+--- !u!95 &7161938507631128358 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6835083502486696525, guid: 4cdad96bb72c5524bb6878efc209cd29,
+    type: 3}
+  m_PrefabInstance: {fileID: 4449355340488727915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7663134184048180753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6334210534325969786, guid: 4cdad96bb72c5524bb6878efc209cd29,

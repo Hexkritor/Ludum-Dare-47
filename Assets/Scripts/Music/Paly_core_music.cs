@@ -15,8 +15,7 @@ public class Paly_core_music : MonoBehaviour
 
     
 
-
-    FMOD.Studio.EventInstance EventInstance;
+    public FMOD.Studio.EventInstance EventInstance;
     public FMOD.Studio.EventInstance AmbInstance;
 
     private void Start()
@@ -29,6 +28,8 @@ public class Paly_core_music : MonoBehaviour
             PlayerPrefs.SetInt("fadeMusic", 0);
         }
 
+        DontDestroyOnLoad(gameObject);
+
     }
 
     public void Music_start()
@@ -37,10 +38,15 @@ public class Paly_core_music : MonoBehaviour
 
         EventInstance = FMODUnity.RuntimeManager.CreateInstance(CoreMusic);//создаёт контейнер для семпла
         EventInstance.start();//Проигрывает этот контейнер
-        EventInstance.release();//Удаляет этот контейнер
 
         AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
         AmbInstance.release();
+    }
+
+    public void Music_stop()
+    {
+        EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EventInstance.release();
     }
 
 }

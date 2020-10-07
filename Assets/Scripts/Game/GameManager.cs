@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject deathScreen;
     public GameObject musicPrefab;
     public GameObject bossMusicPrefab;
+
+    public TextMeshProUGUI enemiesLeftText;
 
 
     public List<int> roomSizeLevelParams;
@@ -66,6 +69,14 @@ public class GameManager : MonoBehaviour
             _enemies.Add(generator.CreateEnemy(roomSize, 2));
         if (PlayerPrefs.GetInt("Level") % 6 == 5)
         {
+            Paly_core_music paly_Core_Music = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Paly_core_music>();
+            if (paly_Core_Music)
+            {
+                paly_Core_Music.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                paly_Core_Music.EventInstance.release();
+            }
+            else
+                throw new System.Exception("Музыке ПИЗДА");
             _enemies.Add(generator.CreateEnemy(roomSize, 3));
             bossMusicPrefab.SetActive(true);
             musicPrefab.SetActive(false);
@@ -211,5 +222,6 @@ public class GameManager : MonoBehaviour
         }
         else
             deathScreen.SetActive(true);
+        enemiesLeftText.text = "Enemies left: " + _enemies.Count.ToString();
     }
 }

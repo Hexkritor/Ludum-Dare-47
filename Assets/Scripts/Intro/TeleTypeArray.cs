@@ -33,6 +33,17 @@ public class TeleTypeArray : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void Music_start()
+    {
+        PlayerPrefs.SetInt("fadeMusic", 1);
+
+        sw.EventInstance = FMODUnity.RuntimeManager.CreateInstance(sw.CoreMusic);//создаёт контейнер для семпла
+        sw.EventInstance.start();//Проигрывает этот контейнер
+
+        sw.AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
+        sw.AmbInstance.release();
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Pause"))
