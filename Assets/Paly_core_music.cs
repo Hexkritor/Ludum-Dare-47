@@ -28,7 +28,6 @@ public class Paly_core_music : MonoBehaviour
         {
             PlayerPrefs.SetInt("fadeMusic", 0);
         }
-
     }
 
     public void Music_start()
@@ -42,10 +41,14 @@ public class Paly_core_music : MonoBehaviour
         AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
         AmbInstance.release();
     }
+<<<<<<< HEAD
     public void Music_stop()
     {
         EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         EventInstance.release();
 
     }
+=======
+    
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 }

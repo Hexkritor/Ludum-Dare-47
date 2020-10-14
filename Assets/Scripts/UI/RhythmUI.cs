@@ -24,8 +24,8 @@ public class RhythmUI : MonoBehaviour
     void Start()
     {
         hitWindow.GetComponent<RectTransform>().sizeDelta = new Vector2(_baseBeatSize * _hitRate, 32);
-        leftPanel.SetFloat("speed", _baseBPM / 120);
-        rightPanel.SetFloat("speed", _baseBPM / 120);
+        leftPanel.speed = 120 / _baseBPM;
+        rightPanel.speed = 120 / _baseBPM;
     }
 
 }

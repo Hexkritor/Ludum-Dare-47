@@ -13,27 +13,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< HEAD
   - {fileID: 114217849222712996}
   - {fileID: 114852838563539568}
+=======
+  - {fileID: 114258297681992198}
+  - {fileID: 114260918072785262}
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
   EditorEvents:
-  - {fileID: 114591778140643762}
-  - {fileID: 114883131738965050}
-  - {fileID: 114693642699033294}
-  - {fileID: 114967552450848210}
-  - {fileID: 114377504235289766}
-  - {fileID: 114335848476815436}
-  - {fileID: 114696673263987078}
-  - {fileID: 114529051037291296}
-  - {fileID: 114393151947489550}
-  - {fileID: 114316057698008336}
-  - {fileID: 114272400075023302}
-  - {fileID: 114901671079506018}
+  - {fileID: 114254213895212954}
+  - {fileID: 114094177632839320}
+  - {fileID: 114243142514908348}
+  - {fileID: 114571362437431516}
+  - {fileID: 114693065259166642}
+  - {fileID: 114636280926220544}
+  - {fileID: 114786783720577808}
+  - {fileID: 114259300393972752}
+  - {fileID: 114141558825745696}
+  - {fileID: 114818350187430588}
+  - {fileID: 114610972173094304}
   EditorParameters: []
   MasterBanks:
+<<<<<<< HEAD
   - {fileID: 114852838563539568}
   StringsBanks:
   - {fileID: 114217849222712996}
   stringsBankWriteTime: 637375964119719140
+=======
+  - {fileID: 114260918072785262}
+  StringsBanks:
+  - {fileID: 114258297681992198}
+  stringsBankWriteTime: 637375228502969226
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
   cacheVersion: 3
 --- !u!114 &114005541146985310
 MonoBehaviour:
@@ -110,29 +121,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 269
---- !u!114 &114104178412379984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Core music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Core music
-  guid: 1872ee973fe1f04b9168a771b8149767
-  Banks:
-  - {fileID: 114338992933286462}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 215580
 --- !u!114 &114116060685999822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +139,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114125281586687254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +158,8 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114141558825745696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +183,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3815
+<<<<<<< HEAD
 --- !u!114 &114159332527102208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +273,8 @@ MonoBehaviour:
   - Name: 
     Value: 1530
   Exists: 1
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114226922131959510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,30 +310,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114229071618963664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Menu music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Menu music
-  guid: 93419367cea0564999f8372609c5f3f7
-  Banks:
-  - {fileID: 114338992933286462}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114352653763092650}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 103000
 --- !u!114 &114243142514908348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,30 +333,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7115
---- !u!114 &114252646956204272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Dungeon scape
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Dungeon scape
-  guid: d09099db006b4c4395bc5f6d818cde11
-  Banks:
-  - {fileID: 114338992933286462}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 114831867591290108}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 120000
 --- !u!114 &114254213895212954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +417,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &114272400075023302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +441,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3815
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114283962350760980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +494,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114316057698008336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +518,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1291
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114317112055195578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,29 +560,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114324007291886394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/skelet
-  m_EditorClassIdentifier: 
-  Path: event:/skelet
-  guid: 84b2ebaba564864f9c93321e3d4971d6
-  Banks:
-  - {fileID: 114338992933286462}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 2043
 --- !u!114 &114332017965732620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +578,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114335848476815436
+--- !u!114 &114340596849020226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,9 +587,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ui play
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
+  Path: Fmod/LD 47/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637374533265365038
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &114342781202763762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu music/Menu_Fade
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/Ui play
   guid: 8576abd43fcbac4fb8984c44b5f815ec
   Banks:
@@ -673,6 +621,14 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 7115
 --- !u!114 &114338992933286462
+=======
+  Name: Menu_Fade
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114424873770465490
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -684,13 +640,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Fmod/LD 47/Desktop/Master.bank
+  Path: Fmod/LD 47/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637375396558756548
+  lastModified: 637375134484799007
   LoadResult: 0
   FileSizes: []
-  Exists: 1
---- !u!114 &114340596849020226
+  Exists: 0
+--- !u!114 &114437536085352710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -699,6 +655,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
@@ -857,6 +814,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Menu music/Menu_Fade
   m_EditorClassIdentifier: 
@@ -933,6 +892,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114529051037291296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +916,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 215580
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114541955648099276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +994,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 103000
+<<<<<<< HEAD
 --- !u!114 &114591778140643762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,6 +1018,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 215580
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114600054852733550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1172,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114668958700237738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,6 +1190,8 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114693065259166642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1215,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1216
+<<<<<<< HEAD
 --- !u!114 &114693642699033294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,6 +1263,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 103000
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114730546448912090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1411,23 +1382,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 120000
---- !u!114 &114831867591290108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Dungeon scape/Dungeon_fade
-  m_EditorClassIdentifier: 
-  Name: Dungeon_fade
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &114837932591733482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,6 +1421,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &114852838563539568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,6 +1483,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3815
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114856343896829892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,6 +1520,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &114883131738965050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,6 +1624,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 131250
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114904049680811346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,6 +1648,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 215580
+<<<<<<< HEAD
 --- !u!114 &114907918418405912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1768,6 +1729,8 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1216
+=======
+>>>>>>> parent of b9a49af... Merge branch 'master' of https://github.com/Hexkritor/Ludum-Dare-47
 --- !u!114 &114989337620840552
 MonoBehaviour:
   m_ObjectHideFlags: 0

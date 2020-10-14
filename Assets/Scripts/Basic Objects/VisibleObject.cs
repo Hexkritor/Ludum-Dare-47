@@ -22,8 +22,6 @@ public class VisibleObject : MonoBehaviour
 
     protected virtual void UpdateLayerPosition()
     {
-        if (!_renderer)
-            _renderer = gameObject.GetComponent<SpriteRenderer>();
         _renderer.sortingOrder = Mathf.FloorToInt(9000 - gameObject.transform.position.y * 10);
     }
 

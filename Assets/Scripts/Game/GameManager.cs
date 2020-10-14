@@ -15,11 +15,8 @@ public class GameManager : MonoBehaviour
     public HP_Bar bar;
     public Camera camera;
     public GameObject deathScreen;
-    public GameObject musicPrefab;
-    public GameObject bossMusicPrefab;
 
 
-    public List<int> roomSizeLevelParams;
     public List<int> goblinLevelParams;
     public List<int> mushroomLevelParams;
     public List<int> skeletonLevelParams;
@@ -31,30 +28,18 @@ public class GameManager : MonoBehaviour
     private float _targetBPM;
     [SerializeField]
     private float _stepHitRate;
-    [SerializeField]
-    private float _globalStepCooldown;
-    [SerializeField]
     private float _stepCooldown;
-    [SerializeField]
     private float _stepCooldownTimer;
-    [SerializeField]
     private float _hitCooldown;
+    private float _hitCooldownTimer;
     private bool _standingObjectsUpdated;
     private bool _isDiscoMode = true;
-    [SerializeField]
-    private bool _isButtonPressed = false;
+    private bool _isButtonPressed;
     private int _discoTick;
-    [SerializeField]
-    private Vector2 _playerDirection;
-    [SerializeField]
-    private bool canBePressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("Level") == 0)
-            PlayerPrefs.SetInt("Hp", 150);
-        roomSize = roomSizeLevelParams[PlayerPrefs.GetInt("Level")];
         _roomTiles = generator.GenerateRoom(roomSize);
         _activePlayer = generator.CreatePlayer(roomSize);
         _enemies = new List<Enemy>();
@@ -64,26 +49,11 @@ public class GameManager : MonoBehaviour
             _enemies.Add(generator.CreateEnemy(roomSize, 0));
         for (int i = 0; i < mushroomLevelParams[PlayerPrefs.GetInt("Level")]; ++i)
             _enemies.Add(generator.CreateEnemy(roomSize, 2));
-        if (PlayerPrefs.GetInt("Level") % 6 == 5)
-        {
-            _enemies.Add(generator.CreateEnemy(roomSize, 3));
-            bossMusicPrefab.SetActive(true);
-            musicPrefab.SetActive(false);
-            _enemies[_enemies.Count - 1].animator.SetTrigger("Afro");
-        }
-        else
-        {
-            musicPrefab.SetActive(true);
-        }
-            
-            
-        _stepCooldownTimer = _stepCooldown;
+        _stepCooldownTimer = 0;
         _standingObjectsUpdated = true;
         _discoTick = 1;
-        _stepCooldown = (60 / _targetBPM);
+        _stepCooldown = (60 / _targetBPM) * (1 - _stepHitRate);
         _hitCooldown = 60 / _targetBPM * _stepHitRate;
-        _globalStepCooldown = _stepCooldown;
-        _playerDirection = Vector2.zero;
     }
 
 
@@ -149,49 +119,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        canBePressed = _stepCooldownTimer <= _hitCooldown && _stepCooldownTimer > 0;
-        Vector2 direction = Vector2.up * Input.GetAxis("MoveVertical") + Vector2.right * Input.GetAxis("MoveHorizontal");
-        if (direction.magnitude > 0 && !_isButtonPressed)
-            _isButtonPressed = true;
-        else if (_isButtonPressed && direction.magnitude == 0)
-            _isButtonPressed = false;
-        _stepCooldownTimer -= Time.fixedDeltaTime;
-        _globalStepCooldown -= Time.fixedDeltaTime; 
-        if (_globalStepCooldown <= 0 && !_standingObjectsUpdated)
+        _stepCooldownTimer = (_stepCooldownTimer - Time.fixedDeltaTime <= 0) ? 0 : _stepCooldownTimer - Time.fixedDeltaTime;
+        if (_stepCooldownTimer == 0 && !_standingObjectsUpdated)
             UpdateVisibleObjects();
-        if (_stepCooldownTimer <= _hitCooldown && _isButtonPressed)
+        if (_hitCooldownTimer == 0)
+        if (_stepCooldownTimer == 0 && (Input.GetAxis("MoveVertical") != 0 || Input.GetAxis("MoveHorizontal") != 0))
         {
             if (_activePlayer)
-                _playerDirection = direction;
-            _stepCooldownTimer += _stepCooldown;
-            _standingObjectsUpdated = false;
-        }
-        else if ((_stepCooldownTimer >= _hitCooldown || _stepCooldownTimer < 0) && _isButtonPressed)
-        {
-            if (_stepCooldownTimer < 0)
-                _stepCooldownTimer += _stepCooldown;
-        }
-        if (_stepCooldownTimer < 0)
-            _stepCooldownTimer += _stepCooldown; 
-        if (_globalStepCooldown <= 0)
-        {
-            _globalStepCooldown += _stepCooldown;
-            if (_activePlayer)
-            {
-                _activePlayer.Move(new Vector2(_playerDirection.x, _playerDirection.y));
-                _playerDirection = Vector2.zero;
-            }
+                _activePlayer.Move(new Vector2(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical")));
             foreach (Enemy _enemy in _enemies)
                 _enemy.Move(_activePlayer.gameObject.transform.position);
+            _stepCooldownTimer = _stepCooldown;
+            _standingObjectsUpdated = false;
             if (_isDiscoMode)
-                SetDiscoMode();
+            SetDiscoMode();
         }
     }
 
@@ -204,7 +148,6 @@ public class GameManager : MonoBehaviour
             camera.transform.position = new Vector3(_activePlayer.transform.position.x, _activePlayer.transform.position.y, camera.transform.position.z);
             if (_enemies.Count == 0)
             {
-                PlayerPrefs.SetInt("Hp", Mathf.Min(_activePlayer.hp + 30 + 15 * PlayerPrefs.GetInt("Level"), 150));
                 PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
                 SceneManager.LoadScene("Game");
             }

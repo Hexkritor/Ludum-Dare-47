@@ -112,60 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &62024831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 62024834}
-  - component: {fileID: 62024832}
-  m_Layer: 0
-  m_Name: Boss Music Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &62024832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62024831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music/Boss
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!4 &62024834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62024831}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &104473594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,10 +271,10 @@ RectTransform:
   m_Father: {fileID: 878995180}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.00010681}
+  m_SizeDelta: {x: 640, y: 284.14066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &240758604
 Animator:
@@ -612,7 +558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &666076482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,7 +1529,6 @@ MonoBehaviour:
   - {fileID: 5827626880900468748, guid: ff6458153513c7a4cb57496920a66ac1, type: 3}
   - {fileID: 6294201627720939626, guid: 828b029676a051849bdf0b031b15b379, type: 3}
   - {fileID: 2386097687653446586, guid: 01e2046b0d42deb4694449d2060f4e0b, type: 3}
-  - {fileID: 8742130070373141920, guid: 98a7baa5e908184479ad9127f040c279, type: 3}
   debugText: {fileID: 558680074252528994, guid: d221641bbb7ede149beab4c8361b2692,
     type: 3}
   rhythmUI: {fileID: 1793725602}
@@ -1619,21 +1564,11 @@ MonoBehaviour:
   bar: {fileID: 1360939981}
   camera: {fileID: 1285174100}
   deathScreen: {fileID: 240758602}
-  musicPrefab: {fileID: 666076481}
-  bossMusicPrefab: {fileID: 62024831}
-  roomSizeLevelParams: 0a0000000f00000014000000190000001e0000000f000000
-  goblinLevelParams: 0200000008000000070000000f0000000f00000000000000
-  mushroomLevelParams: 00000000050000000a0000000a0000000f0000000a000000
-  skeletonLevelParams: 0800000003000000080000000a0000000a00000000000000
+  goblinLevelParams: 0200000008000000070000000f0000000f000000
+  mushroomLevelParams: 00000000050000000a0000000a0000000f000000
+  skeletonLevelParams: 0800000003000000080000000a0000000a000000
   _targetBPM: 125.8
   _stepHitRate: 0.2
-  _globalStepCooldown: 0
-  _stepCooldown: 0
-  _stepCooldownTimer: 0
-  _hitCooldown: 0
-  _isButtonPressed: 0
-  _playerDirection: {x: 0, y: 0}
-  canBePressed: 0
 --- !u!1 &1285174098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,9 +1734,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28, y: -32}
-  m_SizeDelta: {x: 182, y: 13}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 158.6, y: -33.69995}
+  m_SizeDelta: {x: 132, y: 13}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360939979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,7 +2180,7 @@ MonoBehaviour:
   rhythmBar: {fileID: 0}
   leftPanel: {fileID: 894615744}
   rightPanel: {fileID: 2129260313}
-  _baseBeatSize: 60
+  _baseBeatSize: 240
   _baseBPM: 125.8
   _hitRate: 0.2
 --- !u!1 &1912318241
@@ -2282,9 +2217,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -6.5}
-  m_SizeDelta: {x: 182, y: 13}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 66, y: -6.5}
+  m_SizeDelta: {x: 132, y: 13}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912318243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2595,6 +2530,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1997948735988707066, guid: d2f921724b357364e806fa0015a997b7,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[0]._name
+      value: MoveVertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997948735988707066, guid: d2f921724b357364e806fa0015a997b7,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[1]._name
+      value: MoveHorizontal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f921724b357364e806fa0015a997b7, type: 3}
 --- !u!1001 &4934425139655449411
@@ -2663,31 +2608,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5190421682580650994, guid: c3d72675d6806c1488c9a9f43ca9ed35,
-        type: 3}
-      propertyPath: _alwaysUpdate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6098383761658734643, guid: c3d72675d6806c1488c9a9f43ca9ed35,
-        type: 3}
-      propertyPath: m_InputActionsPerSecond
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6098383761658734643, guid: c3d72675d6806c1488c9a9f43ca9ed35,
-        type: 3}
-      propertyPath: m_allowMouseInputIfTouchSupported
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6098383761658734643, guid: c3d72675d6806c1488c9a9f43ca9ed35,
-        type: 3}
-      propertyPath: m_deselectBeforeSelecting
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6098383761658734643, guid: c3d72675d6806c1488c9a9f43ca9ed35,
-        type: 3}
-      propertyPath: m_deselectIfBackgroundClicked
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d72675d6806c1488c9a9f43ca9ed35, type: 3}

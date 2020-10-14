@@ -232,7 +232,7 @@ MonoBehaviour:
   _movementSpeed: 7.5
   _moveToPlayerRate: 0.75
   _hp: 2
-  _attackDamage: 3
+  _attackDamage: 2
 --- !u!95 &293655520887155899
 Animator:
   serializedVersion: 3

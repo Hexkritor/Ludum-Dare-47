@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(GameManager))]
 public class RoomGenerator : MonoBehaviour 
@@ -32,18 +31,7 @@ public class RoomGenerator : MonoBehaviour
             }
 
         SetupTileTypes(tiles);
-        if (PlayerPrefs.GetInt("Level") % 6 != 5)
-        {
-            try
-            {
-                SetupWalls(tiles);
-            }
-            catch (System.Exception e)
-            {
-                print(e.Message);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
+        SetupWalls(tiles);
         PaintBackground(tiles);
         PaintWalls(tiles);
         //DebugTiles();
@@ -100,14 +88,12 @@ public class RoomGenerator : MonoBehaviour
 
     private void SetupWalls(RoomTile[,] tiles)
     {
-        int x = tiles.GetLength(0) / 2, y = tiles.GetLength(0) / 2;
         int wallGenerateValue = tiles.GetLength(0) - 2;
         while (wallGenerateValue > 0)
         {
-
-            x = Random.Range(0, tiles.GetLength(0));
-            y = Random.Range(0, tiles.GetLength(1));
-            int w = Random.Range(0, tiles.GetLength(0) / 4),
+            int x = Random.Range(0, tiles.GetLength(0)), 
+                y = Random.Range(0, tiles.GetLength(1)), 
+                w = Random.Range(0, tiles.GetLength(0) / 4),
                 h = Random.Range(0, tiles.GetLength(1) / 4);
             for (int i = x; i < tiles.GetLength(0) && i < x + w; ++i)
                 for (int j = y; j < tiles.GetLength(1) && j < y + h; ++j)
@@ -116,50 +102,6 @@ public class RoomGenerator : MonoBehaviour
                     roomTypes[i, j] = RoomTile.Type.WALL;
                 }
             --wallGenerateValue;
-        }
-
-
-        int[,] dungeonCheck = new int[tiles.GetLength(0), tiles.GetLength(1)];
-        bool[,] isAdded = new bool[tiles.GetLength(0), tiles.GetLength(1)];
-
-        int notWalls = 0;
-        for (int i = 0; i < tiles.GetLength(0); ++i)
-            for (int j = 0; j < tiles.GetLength(1); ++j)
-                if (tiles[i, j].type != RoomTile.Type.WALL)
-                    ++notWalls;
-                else
-                    dungeonCheck[i, j] = 1;
-
-        Vector2Int[] moves = { Vector2Int.up, Vector2Int.left, Vector2Int.down, Vector2Int.right };
-        Vector2Int[] bfs = new Vector2Int[4 * dungeonCheck.GetLength(0)];
-        int start = 0;
-        int end = 1;
-        while (tiles[x, y].type == RoomTile.Type.WALL)
-        {
-            x = Random.Range(1, tiles.GetLength(0) - 1);
-            y = Random.Range(1, tiles.GetLength(1) - 1);
-        }
-        bfs[start] = new Vector2Int(x,y);
-        while (start != end)
-        {
-            dungeonCheck[bfs[start].x, bfs[start].y] = 1;
-
-            foreach (Vector2Int move in moves)
-            {
-                if (dungeonCheck[bfs[start].x + move.x, bfs[start].y + move.y] == 0 && !isAdded[bfs[start].x + move.x, bfs[start].y + move.y])
-                {
-                    bfs[end] = new Vector2Int(bfs[start].x + move.x, bfs[start].y + move.y);
-                    isAdded[bfs[start].x + move.x, bfs[start].y + move.y] = true;
-                    end = (end + 1) % bfs.Length;
-                }
-            }
-            start = (start + 1) % bfs.Length;
-            --notWalls;
-        }
-        print(notWalls);
-        if (notWalls != 0)
-        {
-            throw new System.Exception("FUUUUUUUUU");
         }
     }
 
