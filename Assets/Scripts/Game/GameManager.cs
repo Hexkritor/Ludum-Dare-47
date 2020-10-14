@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject bossMusicPrefab;
 
     public TextMeshProUGUI enemiesLeftText;
-
+    public TextMeshProUGUI levelText;
 
     public List<int> roomSizeLevelParams;
     public List<int> goblinLevelParams;
@@ -223,5 +223,6 @@ public class GameManager : MonoBehaviour
         else
             deathScreen.SetActive(true);
         enemiesLeftText.text = "Enemies left: " + _enemies.Count.ToString();
+        levelText.text = "Level: " + (PlayerPrefs.GetInt("Level") + 1).ToString();
     }
 }

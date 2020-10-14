@@ -17,7 +17,8 @@ public class Game_music : MonoBehaviour
 
     private void Start()
     {
-        
+        if (!sw)
+            sw = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Paly_core_music>();
         if (PlayerPrefs.GetInt("fadeMusic")==0)
         {
             EventInstance = FMODUnity.RuntimeManager.CreateInstance(CoreMusic2);//создаёт контейнер для семпла
