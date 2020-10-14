@@ -37,10 +37,15 @@ public class Paly_core_music : MonoBehaviour
 
         EventInstance = FMODUnity.RuntimeManager.CreateInstance(CoreMusic);//создаёт контейнер для семпла
         EventInstance.start();//Проигрывает этот контейнер
-        EventInstance.release();//Удаляет этот контейнер
+       
 
         AmbInstance.setParameterByName("Dungeon_fade", 1f, false);
         AmbInstance.release();
     }
+    public void Music_stop()
+    {
+        EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EventInstance.release();
 
+    }
 }
